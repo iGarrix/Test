@@ -1,0 +1,118 @@
+﻿<Window x:Class="ITStepcalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITStepcalculator"
+        mc:Ignorable="d"
+        Title="Calculator" Height="520" Width="820"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="20 20 10 20" Padding="10 15 10 15" CornerRadius="15" Background="#1c1c1c" Grid.RowSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center" FontFamily="Comfortaa" Grid.ColumnSpan="2">Results Values</Label>
+                <Separator Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+                <Label HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="1" Grid.Column="1">13 980 uan</Label>
+                <Label HorizontalAlignment="Left" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="1">6 міс. (166 пар) 2x</Label>
+                <Separator Grid.ColumnSpan="2" Grid.Row="1"  VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+                <Label HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="2" Grid.Column="1">83 uan</Label>
+                <Label HorizontalAlignment="Left" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="2">166 пар по 2x</Label>
+                <Separator Grid.ColumnSpan="2" Grid.Row="2"  VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+                <Label HorizontalAlignment="Center" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="3" Grid.Column="1">168 uan</Label>
+                <Label HorizontalAlignment="Left" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="3">83 дн - 166 пар</Label>
+                <Separator Grid.ColumnSpan="2" Grid.Row="3"  VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+                <Label HorizontalAlignment="Left" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="4">2п. - 180хв - 168 uan</Label>
+                <Label HorizontalAlignment="Left" Margin="10 0" FontSize="18" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.Row="5">1п. - 90хв - 84 uan</Label>
+                <Label HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" FontFamily="Comfortaa"
+                       Grid.RowSpan="2" Grid.Row="4" Grid.Column="1">1xd - 1.07 uan</Label>
+                <Separator Grid.ColumnSpan="2" Grid.Row="5"  VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+            </Grid>
+        </Border>
+        <Border Margin="10 20 10 10" CornerRadius="15" Background="#1c1c1c" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center" FontFamily="Comfortaa" Name="Times">Timer</Label>
+                <Label HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontFamily="Comfortaa" Grid.Row="1" Name="Outgoing"
+                       Foreground="#ff5c5c">uan</Label>
+            </Grid>
+        </Border>
+        <Border Margin="10 10 10 20" CornerRadius="15" Background="#1c1c1c" Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Margin="10" FontSize="25" Foreground="Black" Height="Auto" Name="Start" Click="Start_Click">Start</Button>
+                <Button Margin="10" FontSize="25" Foreground="Black" Padding="50 0" Grid.Row="1" Height="Auto" Name="Stop" Click="Stop_Click">Stop</Button>
+                <Button Margin="10" FontSize="25" Foreground="Black" Padding="50 0" Grid.Row="3" Height="Auto" Name="Clear" Click="Clear_Click">Clear</Button>
+            </Grid>
+        </Border>
+        <Border Margin="10 20 20 20" Padding="10 15 10 15" CornerRadius="15" Background="#1c1c1c" Grid.RowSpan="2" Grid.Column="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center" FontFamily="Comfortaa" Grid.ColumnSpan="2">Calculate</Label>
+                <Separator Grid.ColumnSpan="2" VerticalAlignment="Bottom" Margin="10 0" Background="White"></Separator>
+                <TextBox
+    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+                    Name="OutgoingMinutes"
+                    Margin="5 10"
+                    VerticalContentAlignment="Center"
+                    FontSize="16"
+                    Grid.Row="2"
+    materialDesign:HintAssist.Hint="Minutes" SelectionChanged="OutgoingMinutes_SelectionChanged" />
+                    <Label HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontFamily="Comfortaa" Grid.Row="3" Name="Outgoing_Calc"
+                       Foreground="#ff5c5c">0 uan</Label>
+                <Button Margin="10" FontSize="25" Foreground="Black" Padding="50 0" Grid.Row="5" Height="Auto" Name="Calc" Click="Calc_Click">Calc</Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
